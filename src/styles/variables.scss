@@ -1,0 +1,14 @@
+$primary-black: #000000;
+$primary-white: #ffffff;
+$gray-light: #f4f4f4;
+$gray-dark: #333333;
+
+:root {
+  --bg-color: #{$primary-white};
+  --text-color: #{$primary-black};
+}
+
+[data-theme='dark'] {
+  --bg-color: #{$primary-black};
+  --text-color: #{$primary-white};
+}
