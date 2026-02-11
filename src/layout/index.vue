@@ -1,26 +1,20 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" permanent color="black" theme="dark">
-      <v-list-item class="text-center" title="File Converter" subtitle="Pure Client-Side"></v-list-item>
-      <v-divider></v-divider>
-      <v-list nav>
-        <v-list-item
-          prepend-icon="mdi-image-outline"
-          title="图片转换"
-          value="image"
-          to="/image-converter"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-file-code-outline"
-          title="JSON转Excel"
-          value="json"
-          to="/json-converter"
-        ></v-list-item>
-      </v-list>
+    <v-navigation-drawer v-model="drawer" :rail="rail" permanent color="black" theme="dark">
+      <Logo :rail="rail" />
+
+      <v-divider />
+
+      <!-- 直接使用 Sidebar -->
+      <Sidebar />
     </v-navigation-drawer>
 
+    <v-app-bar elevation="1">
+      <v-btn icon="mdi-menu" variant="text" @click="rail = !rail" />
+    </v-app-bar>
+
     <v-main class="bg-gray-100">
-      <v-container fluid shadow-none>
+      <v-container fluid>
         <router-view />
       </v-container>
     </v-main>
@@ -29,8 +23,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import Sidebar from './components/sidebar.vue'
+import Logo from './components/logo.vue'
 
 const drawer = ref(true)
+const rail = ref(false) // 折叠模式
 </script>
 
 <style scoped></style>

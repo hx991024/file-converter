@@ -15,7 +15,9 @@ const routes: RouteRecordRaw[] = [
         name: 'ImageConverter',
         component: () => import('@/views/image-converter/index.vue'),
         meta: {
-          title: '图片转换',
+          title: '图片',
+          icon: 'mdi-image-outline',
+          showInMenu: true,
         },
       },
       {
@@ -23,7 +25,9 @@ const routes: RouteRecordRaw[] = [
         name: 'JsonConverter',
         component: () => import('@/views/json-converter/index.vue'),
         meta: {
-          title: 'JSON转换',
+          title: 'JSON',
+          icon: 'mdi-file-code-outline',
+          showInMenu: true,
         },
       },
     ],
